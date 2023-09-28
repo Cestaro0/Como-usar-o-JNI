@@ -98,6 +98,7 @@ extern "C"
 		HMODULE hMod = LoadLibraryA("D:\\DEV\\JNI\\DllSUM.dll");
 		typedef int (*sum)(int, int);
 		sum s = reinterpret_cast<sum>(GetProcAddress(hMod, "sum"));
+
 		return s(a, b);
 	}
 
