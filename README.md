@@ -1,17 +1,31 @@
-# How-to-use-JNI
-Como usar e consumir um codigo jni
-Como usar JNI, java e c++ juntos.
+# Como usar o JNI
+Imagine que você é um desenvolvedor precisa utilizar uma DLL em C++ por meio do java, com JNI isso se torna possível. 
+Estou fazendo essa documentação bem simples, pois tive alguns problemas em entender tudo. Espero ajudar, vamos abordar os seguintes temas:
+- O que é JNI
+- Como usar o JNI passo a passo
 
+Vamos usar o Intellij e Visual Studio para isso.
 
- Primeiramente, para você conseguir usar JNI, tenha uma plataforma de desenvolvimento, como o intellij. Baixe o java e o configure para conseguir usa-lo em terminal.
- Agora, baixe o visual studio, ele vai ser necessario para a criação do nosso wrapper.
+## Configurar o Java
+ Bom, primeiramente para começarmos a usar tudo que foi proposto, precisamos baixar o JDK (Java Development Kit) do java e configurar sua máquina para tal.
+Lembrete: Caso sua aplicação seja x64 baixe a versão x64, caso seja x32 precisamos baixar uma versão mais antigas, porque o java parou de criar as versões x32 dês do java 8.
+Acesse o link do jdk 11, baixe e automaticamente vai ser configurado nas suas variaveis de ambiente. Mas caso não seja, siga os seguintes passos:
+Abra o terminal e digite:
+```bash
+C:\Users>setx JAVA_HOME "C:\Program Files\Java\jdk-xx.x.x"
+C:\Users>setx PATH "%JAVA_HOME%\bin"
+```
+Pronto está configurado, agora vc precisa receber essa mensagem:
+```bash
+C:\Users>java --version
+java 11.0.16.1 2022-08-18 LTS
+Java(TM) SE Runtime Environment 18.9 (build 11.0.16.1+1-LTS-1)
+Java HotSpot(TM) 64-Bit Server VM 18.9 (build 11.0.16.1+1-LTS-1, mixed mode)
+```
 
-
-- Como funciona o JNI:
-Para entendermos um pouco melhor o que vamos fazer aqui e o porque que de utilizar isso, será necessario uma breve explicação. 
-Imagine a seguinte situação: Você é um programador e tem uma aplicação java mas precisa rodar um código que está em uma .dll
-C/C++, como vc faz isso? Usando o JNI (Java Native Interface). Funciona assim:
-
+## JNI
+Agora vamos falar sobre o JNI(Java Native Interface), ele é simplesmente - a grosso modo - uma maneira que a oracle criou para fazer a comunicação de java com C++, também temos o JNA que é mantido por uma comunidade do github (mas não falaremos dela aqui). Abaixo uma imagem de exemplo
+<img src="../">
 
 Aplicação Java |  Wrapper  | Dll
      JAVA --->  JAVA + C/C++ ---> C/C++
