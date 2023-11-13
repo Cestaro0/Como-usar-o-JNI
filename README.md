@@ -1,8 +1,8 @@
 # How to Use JNI
 Imagine you are a developer who needs to use a C++ DLL within Java; JNI makes this possible. I'm creating this documentation to simplify the process since I had some difficulties understanding it myself. I hope to help you understand. We will cover the following topics:
 
--What is JNI
--How to use JNI step by step
+- What is JNI
+- How to use JNI step by step
 
 We will use IntelliJ and Visual Studio for this.
 
